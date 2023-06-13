@@ -19,7 +19,7 @@ def index():
     projection = {'_id': 1, 'suscriptions': 1, 'gender' : 1, 'degree' : 1, 'age' : 1, 'following' : 1,
                     'skills' : 1, 'hobbies' : 1, "userType" : 1, "username" : 1}
     df_users = pd.DataFrame(gr(collection.find({}, projection)))
-    return df_users.to_json()
+    return str(df_users.head())
 
 
 if __name__ == '__main__':
